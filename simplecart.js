@@ -46,8 +46,8 @@ function Cart(){
 	me.shippingQuantityRate = 0;
 	me.shippingRate = 0;
 	me.shippingCost = 0;
-	me.currency = USD;
-	me.checkoutTo = PayPal;
+	me.currency = IDR;
+	me.checkoutTo = Email;
 	me.email = "";
 	me.merchantId	 = "";
 	me.successUrl = null;
@@ -58,7 +58,7 @@ function Cart(){
 	me.cartHeaders = ['Name','Price','Quantity','Total'];
 	me.events = {};
 	me.sandbox = false;
-	me.paypalHTTPMethod = "GET";
+	me.EmailHTTPMethod = "GET";
 	/*
 		cart headers:
 		you can set these to which ever order you would like, and the cart will display the appropriate headers
@@ -249,7 +249,7 @@ function Cart(){
 		}
 	};
 
-	me.paypalCheckout = function() {
+	me.emailCheckout = function() {
 
 		
 		var form = document.createElement("form"),
@@ -260,7 +260,7 @@ function Cart(){
 			
 		form.style.display = "none";
 		form.method = me.paypalHTTPMethod =="GET" || me.paypalHTTPMethod == "POST" ? me.paypalHTTPMethod : "GET";
-		form.action = me.sandbox ? "https://www.sandbox.paypal.com/cgi-bin/webscr" : "https://www.paypal.com/cgi-bin/webscr";
+		form.action = me.sandbox ? "" : "";
 		form.acceptCharset = "utf-8";
 			
 			
